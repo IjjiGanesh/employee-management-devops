@@ -28,13 +28,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t ${DOCKER_IMAGE}:latest .'
+                sh '/usr/local/bin/docker build -t ${DOCKER_IMAGE}:latest .'
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push ${DOCKER_IMAGE}:latest'
+                sh '/usr/local/bin/docker push ${DOCKER_IMAGE}:latest'
             }
         }
 
