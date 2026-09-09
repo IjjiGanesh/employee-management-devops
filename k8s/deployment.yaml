@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: employee-management-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: employee-management
+
+  template:
+    metadata:
+      labels:
+        app: employee-management
+
+    spec:
+      containers:
+        - name: employee-management
+          image: dockerganesh1234/employee-management-devops:latest
+
+          ports:
+            - containerPort: 5001
+
+          imagePullPolicy: Always
