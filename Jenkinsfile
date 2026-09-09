@@ -4,6 +4,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "dockerganesh1234/employee-management-devops"
+        PATH = "/usr/local/bin:/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
     }
 
     stages {
